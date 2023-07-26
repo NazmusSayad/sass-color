@@ -1,0 +1,19 @@
+@import './color.scss';
+
+// Testing...
+$colors-list: #131517, #1e1f25, #212329, #606389, #4569c4, #296eff, #5f93ff,
+  #94b7ff, #cadbff, #e2ebff, #f9fbff;
+
+$colorsMap: (
+  err: red,
+  ok: green,
+);
+
+html {
+  @include extractColors($colorsMap);
+  @include extractColors(listToMap($colors-list));
+  @include extractColors(listToMap($colors-list, 's'));
+
+  color: clr(0);
+  background-color: clr(s1, 0.1);
+}
